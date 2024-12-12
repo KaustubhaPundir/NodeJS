@@ -10,22 +10,21 @@ function requestListener(req, res) {
         res.write('<head><title>Server1</title><head>');
         res.write('<body><h1>Server1 running</h1></body>')
         res.write('</html>');
-        res.end();
+        return res.end();
     } else if (req.url === '/products') {
         res.setHeader('Content-Type', 'text/html');
         res.write('<html>');
         res.write('<head><title>Server1 - product</title><head>');
         res.write('<body><h1>You are at product section in server1</h1></body>')
         res.write('</html>');
-        res.end();
-    } else {
-        res.setHeader('Content-Type', 'text/html');
-        res.write('<html>');
-        res.write(`<head><title>Server1-${res.url}</title><head>`);
-        res.write(`<body><h1>You are at ${res.url} section in server1</h1></body>`)
-        res.write('</html>');
-        res.end();
+        return res.end();
     }
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write(`<head><title>Server1-something</title><head>`);
+    res.write(`<body><h1>You are at something section in server1</h1></body>`)
+    res.write('</html>');
+    res.end();
 
     //This is a response to send back
 
