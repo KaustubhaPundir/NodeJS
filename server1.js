@@ -1,8 +1,17 @@
 const http=require('http'); //importing http for comms and data transfer
 
 function requestListener(req,res){
-    console.log(req);
-    process.exit();
+    console.log(req.url,req.method,req.headers); //logging request
+    // process.exit();
+    //creating a response
+    res.setHeader('Content-Type','text/html');
+    res.write('<html>');
+    res.write('<head><title>Server1</title><head>');
+    res.write('<body><h1>Server1 running</h1></body>')
+    res.write('</html>');
+    res.end();
+    //This is a response to send back
+
 }//created a function request listner whihc takes a request req and gives a response res
 const server=http.createServer(requestListener); //creates a server which runs our function
 const port=3001; //port for our server
