@@ -2,6 +2,7 @@ const http=require('http'); //importing http for comms and data transfer
 
 function requestListener(req,res){
     console.log(req);
+    process.exit();
 }//created a function request listner whihc takes a request req and gives a response res
 const server=http.createServer(requestListener); //creates a server which runs our function
 const port=3001; //port for our server
