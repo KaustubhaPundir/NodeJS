@@ -22,10 +22,11 @@ function requestListener(req, res) {
             const parseddata=Buffer.concat(body).toString();
             console.log(parseddata); //gives in url format
             const params=new URLSearchParams(parseddata);//exract parameters , params=parameters
-            const jsonObject={};
-            for(const [key,value] of params.entries()){ //arranging in key value pairs
-                jsonObject[key]=value;
-            }
+            // const jsonObject={};
+            // for(const [key,value] of params.entries()){ //arranging in key value pairs
+            //     jsonObject[key]=value;
+            // }
+            const jsonObject=Object.fromEntries(params); //easy way for above commented code
             console.log(jsonObject)
         })
         fs.writeFileSync('user-details.txt','kaustubha');
