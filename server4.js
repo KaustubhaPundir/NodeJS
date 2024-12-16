@@ -13,9 +13,15 @@ function requestListener(req, res) {
         res.write('<button type="submit">Submit</button>')
         res.write('</html>');
     }else if(req.url.toLowerCase()==='/submit-details' && req.method=="POST"){
+        const body=[];
         req.on('data',(chunk)=>{ //event listner
             console.log(chunk); //reading chunks
+            body.push(chunk);
         });
+        req.on('end',()=>{ //extracting data
+            const parseddata=Buffer.concat(body).toString();
+            console.log(parseddata);
+        })
         fs.writeFileSync('user-details.txt','kaustubha');
         res.statusCode=302;//302 means redirection
         res.setHeader('Location','/'); //change location to /
