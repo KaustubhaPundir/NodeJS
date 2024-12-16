@@ -27,9 +27,10 @@ function requestListener(req, res) {
             //     jsonObject[key]=value;
             // }
             const jsonObject=Object.fromEntries(params); //easy way for above commented code
-            console.log(jsonObject)
+            console.log(jsonObject);
+            fs.writeFileSync('user-details.txt',JSON.stringify(jsonObject));
         })
-        fs.writeFileSync('user-details.txt','kaustubha');
+        
         res.statusCode=302;//302 means redirection
         res.setHeader('Location','/'); //change location to /
         return res.end();
