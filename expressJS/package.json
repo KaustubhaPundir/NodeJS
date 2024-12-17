@@ -1,0 +1,14 @@
+{
+  "name": "expressjs1",
+  "version": "1.0.0",
+  "description": "This project is for learning expressjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaustubha pundir",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
