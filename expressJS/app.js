@@ -3,7 +3,7 @@ import express from 'express';
 import requestListener from './server.js';
 
 const app = express();
-app.use('/',(req,res,next)=>{
+app.use('/',(req,res,next)=>{ //we can add path to use app.use for first
     console.log("first middleware",req.url,req.method);
     next();
 });
