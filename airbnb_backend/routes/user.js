@@ -2,8 +2,8 @@ import express from 'express';
 
 const userrouter=express.Router();
 
-userrouter.get("/home",(req,res,next)=>{
-    res.send(`<h1>Hello this is home</h1>`);
+userrouter.get("/user",(req,res,next)=>{
+    res.send(`<h1>welcome to user page</h1>`);
 });
 
 export default userrouter;
