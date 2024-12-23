@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(userrouter);
 app.use(hostrouter);
 app.use((req,res,next)=>{
-    res.send('<h1>404, request not found</h1>')
+    res.status(404).send('<h1>404, request not found</h1>')
 })
 const port = 3001;
 app.listen(port, () => { console.log("Server running at http://localhost:3001/"); }); 
