@@ -11,7 +11,7 @@ app.use((req,res,next)=>{
 });//this middleware applies to every middleware and will show url and method
 app.use(express.urlencoded({extended:true}));
 app.use(userrouter);
-app.use(hostrouter);
+app.use("/host",hostrouter);//another way of giving path this /host will concatinate with path inside hostrouter
 app.use((req,res,next)=>{
     res.status(404).send('<h1>404, request not found</h1>')
 })

@@ -2,7 +2,7 @@ import express from 'express';
 
 const hostrouter=express.Router();
 
-hostrouter.get('/host/add-home',(req,res,next)=>{
+hostrouter.get('/add-home',(req,res,next)=>{
     res.send(`<h1>Add a home</h1>
         <form action='/host/add-home' method='POST'>
             <input type='text' placeholder='enter the home name' name='housename'/>
