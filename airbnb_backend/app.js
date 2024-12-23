@@ -12,8 +12,5 @@ app.use((req,res,next)=>{
 app.use(express.urlencoded({extended:true}));
 app.use(userrouter);
 app.use(hostrouter);
-app.get('/host/add-home',(req,res,next)=>{
-    
-});
 const port = 3001;
 app.listen(port, () => { console.log("Server running at http://localhost:3001/"); }); 
