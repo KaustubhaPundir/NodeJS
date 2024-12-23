@@ -10,26 +10,10 @@ app.use((req,res,next)=>{
     next();
 });//this middleware applies to every middleware and will show url and method
 app.use(express.urlencoded({extended:true}));
-app.get("/",(req,res,next)=>{
-    res.send(`<h1>Welcome to airbnb</h1>
-        <a href="/user">go to user</a>
-        <a href="/host">go to host</a>
-        <br>
-        <a href="/add-home">Add home</a>`);
-});
-app.get('/add-home',(req,res,next)=>{
-    res.send(`<h1>Add a home</h1>
-        <form action='/add-home' method='POST'>
-            <input type='text' placeholder='enter the home name' name='housename'/>
-            <input type='submit'/>
-        </form>`)
-});
-app.post('/add-home',(req,res,next)=>{
-    res.send(`<h1>Home registered successfully</h1>
-        <a href="/">Go back to homepage</a>`);
-    console.log(req.body);
-})
 app.use(userrouter);
 app.use(hostrouter);
+app.get('/host/add-home',(req,res,next)=>{
+    
+});
 const port = 3001;
 app.listen(port, () => { console.log("Server running at http://localhost:3001/"); }); 
