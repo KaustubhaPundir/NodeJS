@@ -5,11 +5,6 @@ const __dirname = path.resolve('.'); //done while using ES module as __dirname, 
 const hostrouter=express.Router();
 
 hostrouter.get('/add-home',homesController.getAddhome);
-hostrouter.post('/host/add-home',(req,res,next)=>{
-    // res.send(`<h1>Home registered successfully</h1>
-    //     <a href="/">Go back to homepage</a>`);
-    res.sendFile(path.join(__dirname,'../','airbnb_backend','views','homeaddedsuccess.html')); //file is send
-    console.log(req.body);
-})
+hostrouter.post('/add-home',homesController.postAddhome);
 
 export default hostrouter;
