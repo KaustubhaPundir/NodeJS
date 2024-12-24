@@ -4,4 +4,4 @@ const __dirname = path.resolve('.');
 const getAddhome=(req,res,next)=>{
     res.sendFile(path.join(__dirname,'../','MVC','views','addHome.html')); //file is send
 }
-export default getAddhome;
+export default {getAddhome,__dirname};
